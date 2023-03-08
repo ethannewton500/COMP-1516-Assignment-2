@@ -18,4 +18,48 @@ def write_countries_capitals_to_file(filename):
     f.close()
 
 
-write_countries_capitals_to_file("123456789.txt")
+def save_capitals():
+    # vowels
+    f = open("vowel_vowel_vowel.txt", "w")
+    for capital in capitals:
+        if re.search("[aeiou]{3}", capital, re.I):
+            f.write(f"{capital.lower()}\n")
+    f.close()
+    # consonants
+    f = open("cons_cons_cons.txt", "w")
+    for capital in capitals:
+        if re.search("[^aeiou .']{3}", capital, re.I):
+            f.write(f"{capital.lower()}\n")
+    f.close()
+    # i before e
+    f = open("i_before_e.txt", "w")
+    for capital in capitals:
+        if re.search("i.*e", capital, re.I):
+            f.write(f"{capital.lower()}\n")
+    f.close()
+    # start and end with a
+    f = open("a_a.txt", "w")
+    for capital in capitals:
+        if re.search("^a.*a$", capital, re.I):
+            f.write(f"{capital.lower()}\n")
+    f.close()
+    # end with vowel
+    f = open("end_with_vowel.txt", "w")
+    for capital in capitals:
+        if re.search("[aeiou]$", capital, re.I):
+            f.write(f"{capital.lower()}\n")
+    f.close()
+    # weird
+    f = open("weird.txt", "w")
+    for capital in capitals:
+        if re.search("[' x]", capital, re.I):
+            f.write(f"{capital.lower()}\n")
+    f.close()
+    f = open("not_start.txt", "w")
+    for capital in capitals:
+        if re.search("^[^a-el-ps]", capital, re.I):
+            f.write(f"{capital.lower()}\n")
+    f.close()
+
+
+save_capitals()
