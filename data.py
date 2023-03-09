@@ -125,6 +125,10 @@ countries_capitals_dictionary = dict(zip(countries, capitals))
 
 
 def main():
+    """
+    main guard function
+    :return: Nothing
+    """
     print("I should not be called")
 
 
